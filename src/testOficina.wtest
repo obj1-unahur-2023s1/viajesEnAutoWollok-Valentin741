@@ -1,0 +1,33 @@
+import remiseras.*
+import clientes.*
+import cadete.*
+import oficina.*
+
+test "remisera de primera opción es Roxana por 300, y el de segunda opción es Juana por 200, 
+	  10 kilómetros para Ana María, la elegida es Juana" {
+	oficina.cambiarPrimerRemiseraPor(roxana)
+	oficina.cambiarSegundaRemiseraPor(juana)
+	oficina.remiseraElegidaParaViaje(anaMaria, 10)
+	assert.equals(juana, oficina.remiseraElegidaParaViaje(anaMaria, 10))
+}
+
+test "Teresa 10Km,primera op Roxana por 220 pesos y Juana 200. La elegida es Roxana" {
+	oficina.cambiarPrimerRemiseraPor(roxana)
+	oficina.cambiarSegundaRemiseraPor(juana)
+	oficina.remiseraElegidaParaViaje(teresa, 10)
+	assert.equals(roxana, oficina.remiseraElegidaParaViaje(teresa, 10))
+}
+
+test "Teresa 4Km,primera op Roxana por 88 pesos y Juana 100. La elegida es Roxana" {
+	oficina.cambiarPrimerRemiseraPor(roxana)
+	oficina.cambiarSegundaRemiseraPor(juana)
+	oficina.remiseraElegidaParaViaje(teresa, 4)
+	assert.equals(roxana, oficina.remiseraElegidaParaViaje(teresa, 4))
+}
+
+test "Intercambiar remiseras" {
+	oficina.asignarRemiseras(juana, mariela)
+	assert.equals(juana, oficina.primeraOpcion())
+	oficina.intercambiarRemiseras()
+	assert.equals(mariela, oficina.primeraOpcion())
+}

@@ -1,0 +1,76 @@
+import remiseras.*
+import clientes.*
+
+test "Roxana con 10KM, a Ludmila 180, a Ana Maria 300 y a Teresa a 264" {
+	roxana.precioViaje(ludmila, 10)
+	assert.equals(180, roxana.precioViaje(ludmila, 10))
+	roxana.precioViaje(anaMaria, 10)
+	assert.equals(300, roxana.precioViaje(anaMaria, 10))
+	roxana.precioViaje(teresa, 10)
+	assert.equals(220, roxana.precioViaje(teresa, 10))
+}
+
+test "Gabriela con 10KM, a Ludmila 216, a Ana Maria 360 y a Teresa a 264" {
+	gabriela.precioViaje(ludmila, 10)
+	assert.equals(216, gabriela.precioViaje(ludmila, 10))
+	gabriela.precioViaje(anaMaria, 10)
+	assert.equals(360, gabriela.precioViaje(anaMaria, 10))
+	gabriela.precioViaje(teresa, 10)
+	assert.equals(264, gabriela.precioViaje(teresa, 10))
+}
+
+test "Mariela con 10KM, lo mismo que roxana" {
+	mariela.precioViaje(ludmila, 10)
+	assert.equals(180, mariela.precioViaje(ludmila, 10))
+	mariela.precioViaje(anaMaria, 10)
+	assert.equals(300, mariela.precioViaje(anaMaria, 10))
+	mariela.precioViaje(teresa, 10)
+	assert.equals(220, mariela.precioViaje(teresa, 10))
+}
+
+test "Juana con 10KM, 200 pesos a todos" {
+	juana.precioViaje(ludmila, 10)
+	assert.equals(200, juana.precioViaje(ludmila, 10))
+	juana.precioViaje(anaMaria, 10)
+	assert.equals(200, juana.precioViaje(anaMaria, 10))
+	juana.precioViaje(teresa, 10)
+	assert.equals(200, juana.precioViaje(teresa, 10))
+}
+
+// -----------------------------------------------------------------------
+
+test "Roxana con 2KM, a Ludmila 36, a Ana Maria 60 y a Teresa a 44" {
+	roxana.precioViaje(ludmila, 2)
+	assert.equals(36, roxana.precioViaje(ludmila, 2))
+	roxana.precioViaje(anaMaria, 2)
+	assert.equals(60, roxana.precioViaje(anaMaria, 2))
+	roxana.precioViaje(teresa, 2)
+	assert.equals(44, roxana.precioViaje(teresa, 2))
+}
+
+test "Gabriela con 2KM, a Ludmila 43.2, a Ana Maria 72 y a Teresa a 52.8" {
+	gabriela.precioViaje(ludmila, 2)
+	assert.equals(43.2, gabriela.precioViaje(ludmila, 2))
+	gabriela.precioViaje(anaMaria, 2)
+	assert.equals(72, gabriela.precioViaje(anaMaria, 2))
+	gabriela.precioViaje(teresa, 2)
+	assert.equals(52.8, gabriela.precioViaje(teresa, 2))
+}
+
+test "Mariela con 2KM, a Ludmila 50, a Ana Maria 60 y a Teresa a 50" {
+	mariela.precioViaje(ludmila, 2)
+	assert.equals(50, mariela.precioViaje(ludmila, 2))
+	mariela.precioViaje(anaMaria, 2)
+	assert.equals(60, mariela.precioViaje(anaMaria, 2))
+	mariela.precioViaje(teresa, 2)
+	assert.equals(50, mariela.precioViaje(teresa, 2))
+}
+
+test "Juana con 2KM, 100 pesos a todos" {
+	juana.precioViaje(ludmila, 2)
+	assert.equals(100, juana.precioViaje(ludmila, 2))
+	juana.precioViaje(anaMaria, 2)
+	assert.equals(100, juana.precioViaje(anaMaria, 2))
+	juana.precioViaje(teresa, 2)
+	assert.equals(100, juana.precioViaje(teresa, 2))
+}
